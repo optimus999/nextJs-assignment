@@ -1,81 +1,80 @@
 "use client"
 import React, { useState } from 'react';
 
+interface IconProps {
+  className?: string;
+}
+
 // Inline SVG icons
-const HomeIcon = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+const HomeIcon = ({ className }: IconProps) => (
+  <svg xmlns="http://www.w3.org/2000/svg" className={`w-5 h-5 ${className}`} viewBox="0 0 24 24" fill="currentColor">
     <path d="M12 2L2 12h3v8h6v-6h2v6h6v-8h3L12 2zm0 15h-2v-6h2v6zm4 0h-2v-6h2v6zm-8 0H6v-6h2v6zm-2-8h2.828l7.172-7.172L20.828 9H18v8h-4v-6h-4v6H6v-8zm1-1h10l-5-5-5 5z"/>
   </svg>
 );
-const DocumentTextOutline = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+const DocumentTextOutline = ({ className }: IconProps) => (
+  <svg xmlns="http://www.w3.org/2000/svg" className={`w-5 h-5 ${className}`} viewBox="0 0 24 24" fill="currentColor">
     <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v4h4v12H6zm2-8h8v2H8zm0-4h8v2H8zm0 8h8v2H8z"/>
   </svg>
 );
-const DocumentAttachOutline = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+const DocumentAttachOutline = ({ className }: IconProps) => (
+  <svg xmlns="http://www.w3.org/2000/svg" className={`w-5 h-5 ${className}`} viewBox="0 0 24 24" fill="currentColor">
     <path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v4h4v12H6zM8 12v3c0 2.21 1.79 4 4 4s4-1.79 4-4v-3h-2v3c0 1.1-.9 2-2 2s-2-.9-2-2v-3H8z"/>
   </svg>
 );
-const SettingsOutline = () => (
-  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+const SettingsOutline = ({ className }: IconProps) => (
+  <svg xmlns="http://www.w3.org/2000/svg" className={`w-5 h-5 ${className}`} viewBox="0 0 24 24" fill="currentColor">
     <path d="M19.4 11.2a.5.5 0 01-.1-.1l-1.6-1.6a.5.5 0 010-.7l2.2-2.2a.5.5 0 01.7 0l1.6 1.6a.5.5 0 010 .7l-2.2 2.2a.5.5 0 01-.7 0zM5.3 15.3a.5.5 0 010-.7l2.2-2.2a.5.5 0 01.7 0l1.6 1.6a.5.5 0 010 .7l-2.2 2.2a.5.5 0 01-.7 0zM12 2a10 10 0 1010 10A10 10 0 0012 2zm0 18a8 8 0 118-8 8 8 0 01-8 8zm-2-8a2 2 0 112 2 2 2 0 01-2-2z"/>
   </svg>
 );
-const HelpCircleOutline: React.FC<{ className?: string }> = ({ className }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="currentColor">
+const HelpCircleOutline = ({ className }: IconProps) => (
+  <svg xmlns="http://www.w3.org/2000/svg" className={`w-5 h-5 ${className}`} viewBox="0 0 24 24" fill="currentColor">
     <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2zm0 18a8 8 0 118-8 8 8 0 01-8 8zm0-13a3 3 0 00-3 3h2a1 1 0 011-1 1 1 0 011 1c0 1.5-3 1.25-3 4h2c0-2 3-2.25 3-4a3 3 0 00-3-3zm1 10h-2v-2h2z"/>
   </svg>
 );
-const StatsChart: React.FC<{ className?: string }> = ({ className }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="currentColor">
+const StatsChart = ({ className }: IconProps) => (
+  <svg xmlns="http://www.w3.org/2000/svg" className={`w-5 h-5 ${className}`} viewBox="0 0 24 24" fill="currentColor">
     <path d="M17 6h-2a2 2 0 00-2 2v11a2 2 0 002 2h2a2 2 0 002-2V8a2 2 0 00-2-2zM9 9H7a2 2 0 00-2 2v8a2 2 0 002 2h2a2 2 0 002-2v-8a2 2 0 00-2-2zM21 14h-2a2 2 0 00-2 2v3a2 2 0 002 2h2a2 2 0 002-2v-3a2 2 0 00-2-2z"/>
   </svg>
 );
-const GridOutline: React.FC<{ className?: string }> = ({ className }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="currentColor">
+const GridOutline = ({ className }: IconProps) => (
+  <svg xmlns="http://www.w3.org/2000/svg" className={`w-5 h-5 ${className}`} viewBox="0 0 24 24" fill="currentColor">
     <path d="M3 3h7v7H3zm2 2v3h3V5zm9 0h7v7h-7zm2 2v3h3V7zm-9 9h7v7H3zm2 2v3h3v-3zm9 0h7v7h-7zm2 2v3h3v-3z"/>
   </svg>
 );
-const LogOutOutline: React.FC<{ className?: string }> = ({ className }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="currentColor">
+const LogOutOutline = ({ className }: IconProps) => (
+  <svg xmlns="http://www.w3.org/2000/svg" className={`w-5 h-5 ${className}`} viewBox="0 0 24 24" fill="currentColor">
     <path d="M16 9v-4l-8 8 8 8v-4h4V9zm-2 2h-6l4-4v2h-4v4h4v2l-4-4z"/>
   </svg>
 );
-const Search: React.FC<{ className?: string }> = ({ className }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="currentColor">
+const Search = ({ className }: IconProps) => (
+  <svg xmlns="http://www.w3.org/2000/svg" className={`w-6 h-6 ${className}`} viewBox="0 0 24 24" fill="currentColor">
     <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5a6.5 6.5 0 10-6.5 6.5c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 5L20.49 19l-5-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
   </svg>
 );
-const FilterOutline: React.FC<{ className?: string }> = ({ className }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="currentColor">
+const FilterOutline = ({ className }: IconProps) => (
+  <svg xmlns="http://www.w3.org/2000/svg" className={`w-5 h-5 ${className}`} viewBox="0 0 24 24" fill="currentColor">
     <path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"/>
   </svg>
 );
-const EllipsisVertical: React.FC<{ className?: string }> = ({ className }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="currentColor">
+const EllipsisVertical = ({ className }: IconProps) => (
+  <svg xmlns="http://www.w3.org/2000/svg" className={`w-6 h-6 ${className}`} viewBox="0 0 24 24" fill="currentColor">
     <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
   </svg>
 );
-const Check: React.FC<{ className?: string }> = ({ className }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="currentColor">
+const Check = ({ className }: IconProps) => (
+  <svg xmlns="http://www.w3.org/2000/svg" className={`w-5 h-5 ${className}`} viewBox="0 0 24 24" fill="currentColor">
     <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
   </svg>
 );
-const Close: React.FC<{ className?: string }> = ({ className }) => (
-  <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 24 24" fill="currentColor">
+const Close = ({ className }: IconProps) => (
+  <svg xmlns="http://www.w3.org/2000/svg" className={`w-5 h-5 ${className}`} viewBox="0 0 24 24" fill="currentColor">
     <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
   </svg>
 );
 
 
 // Helper component for different colored progress circles
-interface ProgressCircleProps {
-  progress: number;
-  color: string;
-}
-
-const ProgressCircle: React.FC<ProgressCircleProps> = ({ progress, color }) => {
+const ProgressCircle = ({ progress, color }: { progress: number; color: string }) => {
   const radius = 50;
   const circumference = 2 * Math.PI * radius;
   const strokeDashoffset = circumference - (progress / 100) * circumference;
@@ -220,7 +219,7 @@ export default function App() {
     }
   };
 
-  const ToggleSwitch: React.FC<{ checked: boolean; onChange: () => void }> = ({ checked, onChange }) => (
+  const ToggleSwitch = ({ checked, onChange }: { checked: boolean; onChange: () => void }) => (
     <label className="relative inline-block w-10 h-6 cursor-pointer">
       <input type="checkbox" checked={checked} onChange={onChange} className="sr-only peer" />
       <div className="absolute top-0 left-0 w-10 h-6 bg-gray-200 rounded-full transition-colors duration-200 ease-in-out peer-checked:bg-indigo-600"></div>
@@ -259,7 +258,7 @@ export default function App() {
                 }`}
               >
                 <div className="flex items-center space-x-3">
-                  <HelpCircleOutline className="w-5 h-5" />
+                  <HelpCircleOutline />
                   <span>{item.question}</span>
                 </div>
                 <span className="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full animate-pulse">{item.count}</span>
@@ -269,7 +268,7 @@ export default function App() {
         </div>
         <div className="p-4">
           <button className="flex items-center w-full space-x-3 p-3 rounded-xl text-gray-300 transition-all duration-300 transform hover:scale-105 hover:bg-gray-800">
-            <LogOutOutline className="w-5 h-5" />
+            <LogOutOutline />
             <span>Logout</span>
           </button>
         </div>
@@ -316,31 +315,31 @@ export default function App() {
               <div className="mt-6">
                 <h3 className="text-lg font-medium mb-2">Steps Completed</h3>
                 <ul className="space-y-2">
-                                      <li className="flex items-center space-x-2 text-gray-700 transition-transform duration-300 hover:translate-x-1">
-                      <Check className="w-5 h-5 text-green-500" />
-                      <span>Profile Setup</span>
-                    </li>
-                    <li className="flex items-center space-x-2 text-gray-700 transition-transform duration-300 hover:translate-x-1">
-                      <Check className="w-5 h-5 text-green-500" />
-                      <span>Initial Training</span>
-                    </li>
-                    <li className="flex items-center space-x-2 text-gray-700 transition-transform duration-300 hover:translate-x-1">
-                      <Check className="w-5 h-5 text-green-500" />
-                      <span>Legal Documents</span>
-                    </li>
+                  <li className="flex items-center space-x-2 text-gray-700 transition-transform duration-300 hover:translate-x-1">
+                    <Check className="text-green-500" />
+                    <span>Profile Setup</span>
+                  </li>
+                  <li className="flex items-center space-x-2 text-gray-700 transition-transform duration-300 hover:translate-x-1">
+                    <Check className="text-green-500" />
+                    <span>Initial Training</span>
+                  </li>
+                  <li className="flex items-center space-x-2 text-gray-700 transition-transform duration-300 hover:translate-x-1">
+                    <Check className="text-green-500" />
+                    <span>Legal Documents</span>
+                  </li>
                 </ul>
               </div>
               <div className="mt-4">
                 <h3 className="text-lg font-medium mb-2">Steps Remaining</h3>
                 <ul className="space-y-2">
-                                      <li className="flex items-center space-x-2 text-gray-700 transition-transform duration-300 hover:translate-x-1">
-                      <Close className="w-5 h-5 text-red-500" />
-                      <span>Financial Integration</span>
-                    </li>
-                    <li className="flex items-center space-x-2 text-gray-700 transition-transform duration-300 hover:translate-x-1">
-                      <Close className="w-5 h-5 text-red-500" />
-                      <span>Final Review</span>
-                    </li>
+                  <li className="flex items-center space-x-2 text-gray-700 transition-transform duration-300 hover:translate-x-1">
+                    <Close className="text-red-500" />
+                    <span>Financial Integration</span>
+                  </li>
+                  <li className="flex items-center space-x-2 text-gray-700 transition-transform duration-300 hover:translate-x-1">
+                    <Close className="text-red-500" />
+                    <span>Final Review</span>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -460,7 +459,7 @@ export default function App() {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
             </div>
             <button className="flex items-center space-x-2 px-4 py-2 border border-gray-300 rounded-xl text-gray-700 transition-all duration-300 hover:bg-gray-100 transform hover:scale-105">
-              <FilterOutline className="w-5 h-5" />
+              <FilterOutline />
               <span>Filters</span>
             </button>
           </div>
